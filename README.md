@@ -43,7 +43,7 @@ Please note that the resulting files are not minified.
 
 ## Version history
 
-None yet..
+v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
 
 ## License
 
