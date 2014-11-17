@@ -4,6 +4,8 @@
 
 ![Mr Sakugawa](./sakugawa-logo.png)
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index)](https://github.com/igrigorik/ga-beacon)
+[![Dependency Status](https://david-dm.org/paazmaya/sakugawa.svg)](https://david-dm.org/paazmaya/sakugawa)
+[![devDependency Status](https://david-dm.org/paazmaya/sakugawa/dev-status.svg)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 
 ## Background for the name
 
