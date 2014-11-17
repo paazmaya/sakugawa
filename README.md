@@ -2,7 +2,7 @@
 
 > CSS splitter, filter and organiser
 
-![Mr Sakugawa](./sakugawa-logo.svg)
+![Mr Sakugawa](./sakugawa-logo.png)
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index)](https://github.com/igrigorik/ga-beacon)
 
 ## Background for the name
@@ -23,6 +23,18 @@ Options:
   -s, --suffix           Output CSS file suffix
   -m, --media-queries    Media query handling, separation to different file (separate) or ignorance (ignore). By default included
 ```
+
+Example with [Pure CSS](http://purecss.io/ "A set of small, responsive CSS modules that you can use in every web project"):
+
+```sh
+wget http://yui.yahooapis.com/pure/0.5.0/pure-min.css
+
+sakugawa -n 400 -m separate pure-min.css
+```
+
+Would result in creating files `pure-min_1.css` and `pure-min_2.css` in which the latter contains all media queries.
+
+Please note that the resulting files are not minified.
 
 ## Task runners
 
