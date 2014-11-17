@@ -10,13 +10,17 @@
 
 'use strict';
 
-var Bossy = require('bossy'),
-  sakugawa = require('../lib'),
-  fs = require('fs'),
+// Usually first variables defined are the ones requiring native Node.js modules
+var fs = require('fs'),
   path = require('path'),
   util = require('util');
 
-var options = {
+// It might be good for organisation, to have another variable set for other modules
+var Bossy = require('bossy'),
+  sakugawa = require('../lib');
+
+// Default command line options
+var cmdOptions = {
   h: {
     description: 'Show help',
     alias: 'help',
@@ -47,18 +51,20 @@ var options = {
   }
 };
 
-var args = Bossy.parse(options);
+// Initialise and parse command line arguments against the default options
+var args = Bossy.parse(cmdOptions);
 
+// In case parsing failed, stop execution with an error
 if (args instanceof Error) {
   util.error(args.message);
   return;
 }
 
+// In case help or version information is specifically requested, only that should be outputted
 if (args.h) {
   util.puts(Bossy.usage(options, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
   return;
 }
-
 if (args.V) {
   var json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
   var pkg = JSON.parse(json);
@@ -76,13 +82,23 @@ if (args._) {
     return fs.existsSync(file);
   });
   util.log(util.inspect(files));
-  
+
   var opts = {
     maxSelectors: args.n,
     mediaQueries: args.m
   };
-  
-  sakugawa(files, opts);
+
+  files.forEach(function (file) {
+    util.puts('Reading ' + file);
+    var styles = fs.readFileSync(file, 'utf8');
+    var pages = sakugawa(styles, opts);
+    pages.forEach(function (page, index) {
+      // page is a CSS string
+      var pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
+      util.puts('Writing ' + pageFile);
+      fs.writeFileSync(pageFile, page, 'utf8');
+    });
+  });
 }
 else {
   util.error('No files defined');
