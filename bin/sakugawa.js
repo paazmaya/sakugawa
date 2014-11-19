@@ -62,7 +62,7 @@ if (args instanceof Error) {
 
 // In case help or version information is specifically requested, only that should be outputted
 if (args.h) {
-  util.puts(Bossy.usage(options, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
+  util.puts(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
   return;
 }
 if (args.V) {
@@ -81,7 +81,6 @@ if (args._) {
   files = files.filter(function (file) {
     return fs.existsSync(file);
   });
-  util.log(util.inspect(files));
 
   var opts = {
     maxSelectors: args.n,
