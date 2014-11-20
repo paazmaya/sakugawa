@@ -16,7 +16,7 @@ build:
     -
       script:
         name: Check types with Flow
-        code: "$WERCKER_CACHE_DIR/flow/flow" check --all
+        code: $WERCKER_CACHE_DIR/flow/flow check --all
     -
       npm-install
     #-
