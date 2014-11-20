@@ -55,8 +55,8 @@ wget http://yui.yahooapis.com/pure/0.5.0/pure-min.css
 
 ## Version history
 
-v0.2.0 (2014-11-19) Speed improvements
-v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
+* v0.2.0 (2014-11-19) Speed improvements
+* v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
 
 ## License
 
