@@ -3,9 +3,11 @@
 > CSS splitter, filter and organiser
 
 ![Mr Sakugawa](./logo.png)
+
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index)](https://github.com/igrigorik/ga-beacon)
 [![Dependency Status](https://david-dm.org/paazmaya/sakugawa.svg)](https://david-dm.org/paazmaya/sakugawa)
 [![devDependency Status](https://david-dm.org/paazmaya/sakugawa/dev-status.svg)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
+[![wercker status](https://app.wercker.com/status/d1673adc6fdf3e5c3e4234986517ebc3/s "wercker status")](https://app.wercker.com/project/bykey/d1673adc6fdf3e5c3e4234986517ebc3)
 
 ## Background for the name
 
