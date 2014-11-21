@@ -1,27 +1,23 @@
 box: wercker/nodejs
 build:
   steps:
-    -
-      script:
+    - install-packages:
+        packages: unzip
+    - script:
         name: Checking that Flow is available
-        code: |
-          if [ -f "$WERCKER_CACHE_DIR/flow/flow" ];
-          then
-              debug "flow found in cache"
+        code: >
+          if [ -f "$WERCKER_CACHE_DIR/flow/flow" ]; then
+          debug "flow found in cache";
           else
-              debug "flow not found in cache, will download"
-              curl -o "$WERCKER_CACHE_DIR/flow.zip" "http://flowtype.org/downloads/flow-linux64-latest.zip"
-              unzip "$WERCKER_CACHE_DIR/flow.zip" -d $WERCKER_CACHE_DIR
+          debug "flow not found in cache, will download" &&
+          curl -o "$WERCKER_CACHE_DIR/flow.zip" "http://flowtype.org/downloads/flow-linux64-latest.zip" &&
+          unzip "$WERCKER_CACHE_DIR/flow.zip" -d $WERCKER_CACHE_DIR;
           fi
-    -
-      script:
+    - script:
         name: Check types with Flow
         code: $WERCKER_CACHE_DIR/flow/flow check --all
-    -
-      npm-install
-    #-
-      #npm-test
-    -
-      script:
+    - npm-install
+    #- npm-test
+    - script:
         name: nodejs and npm version information
         code: npm --versions
