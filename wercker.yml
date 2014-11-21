@@ -12,6 +12,7 @@ build:
           debug "flow not found in cache, will download" &&
           curl -o "$WERCKER_CACHE_DIR/flow.zip" "http://flowtype.org/downloads/flow-linux64-latest.zip" &&
           unzip "$WERCKER_CACHE_DIR/flow.zip" -d $WERCKER_CACHE_DIR;
+          rm -rf "$WERCKER_CACHE_DIR/flow/examples"
           fi
     - script:
         name: Check types with Flow

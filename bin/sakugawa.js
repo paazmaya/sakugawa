@@ -1,5 +1,5 @@
 #!/usr/bin/env node --prof --expose-gc
-
+/* @flow */
 /**
  * Sakugawa
  * https://github.com/paazmaya/sakugawa
