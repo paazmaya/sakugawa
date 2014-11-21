@@ -15,7 +15,7 @@ need for CSS splitter, which might be the main use case of this task runner plug
 
 Since IE8 and earlier, do not support media queries, but IE9 does, there is an option for handling
 media queries differently, based on the targeted IE version. By separating media queries in
-to a different file, it will allow the to include that CSS file conditionally only when
+to a different file, it will allow the to include that CSS file [conditionally][] only when
 IE9 is being used. Ideally this would reduce the amount of bytes downloaded by IE8, which
 cannot handle the media queries anyhow, and thus prevent downloading something that is not
 even used.
@@ -79,3 +79,4 @@ Licensed under the [MIT license](LICENSE).
 
 
 [ieinternals]: http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx "Stylesheet Limits in Internet Explorer"
+[conditionally]: http://www.quirksmode.org/css/condcom.html "Conditional comments"
