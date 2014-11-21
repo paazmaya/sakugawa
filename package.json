@@ -10,7 +10,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "",
+    "test": "node tests/index_tape.js",
     "coverage": ""
   },
   "files": [
@@ -52,5 +52,7 @@
     "memwatch": "~0.2.2",
     "v8-profiler": "~5.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tape": "~3.0"
+  }
 }
