@@ -10,6 +10,15 @@
 
 'use strict';
 
+var nodetime = require('nodetime');
+
+nodetime.profile({
+  accountKey: '423d4d28f98e9c98dceb1781a6e19074a95a287a',
+  appName: 'Sakugawa',
+  proxy: 'http://nokes.nokia.com:8080'
+});
+
+
 // Usually first variables defined are the ones requiring native Node.js modules
 var fs = require('fs'),
   path = require('path'),
@@ -78,7 +87,7 @@ if (args._) {
   if (typeof files === 'string') {
     files = [files];
   }
-  files = files.filter(function (file) {
+  files = files.filter(function filterFiles(file) {
     return fs.existsSync(file);
   });
 
@@ -87,11 +96,11 @@ if (args._) {
     mediaQueries: args.m
   };
 
-  files.forEach(function (file) {
+  files.forEach(function eachFiles(file) {
     util.puts('Reading ' + file);
     var styles = fs.readFileSync(file, 'utf8');
     var pages = sakugawa(styles, opts);
-    pages.forEach(function (page, index) {
+    pages.forEach(function eachPages(page, index) {
       // page is a CSS string
       var pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
       util.puts('Writing ' + pageFile);
@@ -102,3 +111,6 @@ if (args._) {
 else {
   util.error('No files defined');
 }
+
+
+nodetime.destroy();
