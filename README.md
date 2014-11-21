@@ -9,6 +9,17 @@
 [![devDependency Status](https://david-dm.org/paazmaya/sakugawa/dev-status.svg)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 [![wercker status](https://app.wercker.com/status/d1673adc6fdf3e5c3e4234986517ebc3/s "wercker status")](https://app.wercker.com/project/bykey/d1673adc6fdf3e5c3e4234986517ebc3)
 
+[Internet Explorer versions from 6 up to 9 come with a limitation][ieinternals] for
+selectors present in a single CSS file. This limitation of 4095 selectors created the
+need for CSS splitter, which might be the main use case of this task runner plugin.
+
+Since IE8 and earlier, do not support media queries, but IE9 does, there is an option for handling
+media queries differently, based on the targeted IE version. By separating media queries in
+to a different file, it will allow the to include that CSS file conditionally only when
+IE9 is being used. Ideally this would reduce the amount of bytes downloaded by IE8, which
+cannot handle the media queries anyhow, and thus prevent downloading something that is not
+even used.
+
 ## Background for the name
 
 [Mr Sakugawa (佐久川 寛賀, first name Kanga)](http://en.wikipedia.org/wiki/Sakugawa_Kanga)
@@ -65,3 +76,6 @@ wget http://yui.yahooapis.com/pure/0.5.0/pure-min.css
 Copyright (c) Juga Paazmaya <olavic@gmail.com>
 
 Licensed under the [MIT license](LICENSE).
+
+
+[ieinternals]: http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx "Stylesheet Limits in Internet Explorer"
