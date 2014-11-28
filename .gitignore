@@ -30,3 +30,4 @@ flow
 *.cpuprofile
 *.heapsnapshot
 memwatch.*
+npm-debug.log
