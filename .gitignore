@@ -27,7 +27,7 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 flow
+
 *.cpuprofile
 *.heapsnapshot
 memwatch.*
-npm-debug.log
