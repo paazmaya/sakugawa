@@ -20,6 +20,7 @@ IE9 is being used. Ideally this would reduce the amount of bytes downloaded by I
 cannot handle the media queries anyhow, and thus prevent downloading something that is not
 even used.
 
+
 ## Background for the name
 
 [Mr Sakugawa (佐久川 寛賀, first name Kanga)](http://en.wikipedia.org/wiki/Sakugawa_Kanga)
@@ -30,6 +31,23 @@ in which a long six feet wooden staff is used.
 
 The three forms are called `Sakugawa no kon sho`, `Sakugawa no kon chu`, and `Sakugawa no kon dai`.
 [Here is a Youtube video of one of those forms.](https://www.youtube.com/watch?v=KF4nERzknmI)
+
+
+## Installation
+
+Install globally, in order to use the command line tool.
+Might need to use `sudo`, depending of your setup:
+
+```sh
+npm install --global sakugawa
+```
+
+For local installation, in which you could use `--save` or `--save-dev`:
+
+```sh
+npm install sakugawa
+```
+
 
 ## Command line usage
 
@@ -61,15 +79,48 @@ The CSS file used in the example can be retrieved with:
 wget http://yui.yahooapis.com/pure/0.5.0/pure-min.css
 ```
 
+
+## Use as a npm module
+
+First [require][] the `sakugawa` module, which exports itself as a function.
+
+```js
+var sakugawa = require('sakugawa');
+```
+
+Later on in the script use the `sakugawa` function:
+
+```js
+var styles = fs.readFileSync('pure.css', 'utf8');
+
+var options = {
+  maxSelectors: 400,
+  mediaQueries: 'separate'
+};
+
+var separated = sakugawa(styles, options);
+// Separated is an array of CSS strings
+
+separated.forEach(function eachPages(css, index) {
+  fs.writeFileSync('pure_' + (index + 1) + '.css', css, 'utf8');
+});
+```
+
+The above used options map to the same as used via command line and thus have the same
+defaults and allowed values.
+
+
 ## Task runners
 
 * [gulp-sakugawa](https://github.com/paazmaya/gulp-sakugawa "Run Sakugawa via gulp, for CSS splitting, filtering and organising")
 * [grunt-sakugawa](https://github.com/paazmaya/grunt-sakugawa "Run Sakugawa via Grunt, for CSS splitting, filtering and organising")
 
+
 ## Version history
 
 * v0.2.0 (2014-11-19) Speed improvements
 * v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
+
 
 ## License
 
@@ -80,3 +131,4 @@ Licensed under the [MIT license](LICENSE).
 
 [ieinternals]: http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx "Stylesheet Limits in Internet Explorer"
 [conditionally]: http://www.quirksmode.org/css/condcom.html "Conditional comments"
+[require]: http://nodejs.org/api/modules.html#modules_module_require_id "The module.require method provides a way to load a module as if require() was called from the original module"
