@@ -1,3 +1,13 @@
+/* @flow weak */
+/**
+ * Sakugawa
+ * https://github.com/paazmaya/sakugawa
+ *
+ * Copyright (c) Juga Paazmaya
+ * Licensed under the MIT license.
+ */
+
+'use strict';
 
 var fs = require('fs');
 var tape = require('tape');
@@ -18,7 +28,7 @@ tape('dummy test', function (test) {
 
 
 tape('pure test', function (test) {
-    test.plan(3);
+    test.plan(1);
 
     var pages = sakugawa(pure);
     test.equal(pages, [expected1, expected2]);

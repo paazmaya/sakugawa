@@ -1,4 +1,4 @@
-#!/usr/bin/env node --prof --expose-gc
+#!/usr/bin/env node
 /* @flow */
 /**
  * Sakugawa
