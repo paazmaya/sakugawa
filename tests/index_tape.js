@@ -1,14 +1,25 @@
 
-var test = require('tape');
+var fs = require('fs');
+var tape = require('tape');
 var sakugawa = require('../lib/index');
 
-test('timing test', function (t) {
-    t.plan(2);
+var pure = fs.readFileSync(__dirname + '/fixtures/pure.css', 'utf8');
+var expected1 = fs.readFileSync(__dirname + '/expected/pure_1.css', 'utf8');
+var expected2 = fs.readFileSync(__dirname + '/expected/pure_2.css', 'utf8');
 
-    t.equal(typeof sakugawa, 'function');
+tape('dummy test', function (test) {
+    test.plan(2);
+
+    test.equal(typeof sakugawa, 'function');
 
     var styles = 'body { color: rebeccapurple; }';
-    t.equal(sakugawa(styles), [styles]);
-
+    test.equal(sakugawa(styles), [styles]);
 });
 
+
+tape('pure test', function (test) {
+    test.plan(3);
+
+    var pages = sakugawa(pure);
+    test.equal(pages, [expected1, expected2]);
+});
