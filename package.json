@@ -13,6 +13,9 @@
     "test": "node tests/index_tape.js",
     "coverage": ""
   },
+  "bin": {
+    "sakugawa": "bin/sakugawa.js"
+  },
   "files": [
     "bin",
     "lib",
@@ -48,10 +51,7 @@
   "dependencies": {
     "bossy": "~1.0",
     "css": "~2.1",
-    "heapdump": "~0.3.1",
-    "memwatch": "~0.2.2",
-    "postcss": "~3.0",
-    "v8-profiler": "~5.2.0"
+    "postcss": "~3.0"
   },
   "devDependencies": {
     "tape": "~3.0"
