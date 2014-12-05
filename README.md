@@ -118,6 +118,7 @@ defaults and allowed values.
 
 ## Version history
 
+* v0.2.1 (2014-12-05) Better documentation and command line bin path configured so now usable via global install
 * v0.2.0 (2014-11-19) Speed improvements
 * v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
 
