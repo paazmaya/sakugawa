@@ -51,9 +51,10 @@
   "dependencies": {
     "bossy": "~1.0",
     "css": "~2.1",
-    "postcss": "~3.0"
+    "postcss": "~4.0"
   },
   "devDependencies": {
-    "tape": "~3.0"
+    "eslint": "~0.13",
+    "tape": "~3.5"
   }
 }

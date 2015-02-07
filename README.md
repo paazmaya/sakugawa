@@ -4,7 +4,7 @@
 
 ![Mr Sakugawa](./logo.png)
 
-[![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index?flat)](https://github.com/igrigorik/ga-beacon)
 [![Dependency Status](https://img.shields.io/david/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa)
 [![devDependency Status](https://img.shields.io/david/dev/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 [![wercker status](https://img.shields.io/wercker/ci/d1673adc6fdf3e5c3e4234986517ebc3.svg?style=flat-square "wercker status")](https://app.wercker.com/project/bykey/d1673adc6fdf3e5c3e4234986517ebc3)
