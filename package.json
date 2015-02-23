@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "bossy": "~1.0",
-    "css": "~2.1"
+    "css": "~2.2"
   },
   "devDependencies": {
     "eslint": "~0.15",
