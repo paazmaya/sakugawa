@@ -136,6 +136,7 @@ while the API provided is only touching strings.
 
 ## Version history
 
+* v0.3.1 (2015-02-23) Use latest `css` version, namely 2.2.0, which was release five days ago
 * v0.3.0 (2015-02-23) Possibility to specify minimum amount of generated CSS, #7
 * v0.2.1 (2014-12-05) Better documentation and command line bin path configured so now usable via global install
 * v0.2.0 (2014-11-19) Speed improvements
