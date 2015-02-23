@@ -12,8 +12,7 @@
 
 // Usually first variables defined are the ones requiring native Node.js modules
 var fs = require('fs'),
-  path = require('path'),
-  util = require('util');
+  path = require('path');
 
 // It might be good for organisation, to have another variable set for other modules
 var Bossy = require('bossy'),
@@ -43,6 +42,12 @@ var cmdOptions = {
     type: 'number',
     default: '_'
   },
+  M: {
+    description: 'Minimum number of output CSS files',
+    alias: 'minimum-files',
+    type: 'number',
+    default: 1
+  },
   m: {
     description: 'Media query handling, separation to different file (separate) or ignorance (ignore). By default included',
     alias: 'media-queries',
@@ -56,19 +61,19 @@ var args = Bossy.parse(cmdOptions);
 
 // In case parsing failed, stop execution with an error
 if (args instanceof Error) {
-  util.error(args.message);
+  console.error(args.message);
   return;
 }
 
 // In case help or version information is specifically requested, only that should be outputted
 if (args.h) {
-  util.puts(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
+  console.log(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
   return;
 }
 if (args.V) {
   var json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
   var pkg = JSON.parse(json);
-  util.puts('v' + pkg.version);
+  console.log('v' + pkg.version);
   return;
 }
 
@@ -84,21 +89,22 @@ if (args._) {
 
   var opts = {
     maxSelectors: args.n,
-    mediaQueries: args.m
+    minSheets: args.M,
+    mediaQueries: args.m,
   };
 
   files.forEach(function eachFiles(file) {
-    util.puts('Reading ' + file);
+    console.log('Reading ' + file);
     var styles = fs.readFileSync(file, 'utf8');
     var pages = sakugawa(styles, opts);
     pages.forEach(function eachPages(page, index) {
       // page is a CSS string
       var pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
-      util.puts('Writing ' + pageFile);
+      console.log('Writing ' + pageFile);
       fs.writeFileSync(pageFile, page, 'utf8');
     });
   });
 }
 else {
-  util.error('No files defined');
+  console.error('No files defined');
 }

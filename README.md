@@ -60,6 +60,7 @@ Options:
   -V, --version          Show version information
   -n, --max-selectors    Maximum number of CSS selectors per output file
   -s, --suffix           Output CSS file suffix
+  -M, --minimum-files    Minimum number of output CSS files
   -m, --media-queries    Media query handling, separation to different file (separate) or ignorance (ignore). By default included
 ```
 
@@ -106,8 +107,21 @@ separated.forEach(function eachPages(css, index) {
 });
 ```
 
+Available options are shown below and assigned to their default values:
+
+```js
+var options = {
+  maxSelectors: 4090,
+  mediaQueries: 'normal',
+  filename: 'input.css',
+  minSheets: 1
+};
+```
+
 The above used options map to the same as used via command line and thus have the same
-defaults and allowed values.
+defaults and allowed values. Please note however, that the `minSheets` is used as
+`--minimum-files` via command line, since the command line version is touching files,
+while the API provided is only touching strings.
 
 
 ## Task runners
@@ -122,6 +136,7 @@ defaults and allowed values.
 
 ## Version history
 
+* v0.3.0 (2015-02-23) Possibility to specify minimum amount of generated CSS, #7
 * v0.2.1 (2014-12-05) Better documentation and command line bin path configured so now usable via global install
 * v0.2.0 (2014-11-19) Speed improvements
 * v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
