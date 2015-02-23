@@ -50,11 +50,10 @@
   },
   "dependencies": {
     "bossy": "~1.0",
-    "css": "~2.1",
-    "postcss": "~4.0"
+    "css": "~2.1"
   },
   "devDependencies": {
-    "eslint": "~0.13",
+    "eslint": "~0.15",
     "tape": "~3.5"
   }
 }
