@@ -145,7 +145,7 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
 
   var name = 'min-sheets-lower';
 	var options = {
-		maxSelectors: 7,
+		maxSelectors: 8,
 		minSheets: 2
 	};
 	var result = sakugawa(twenty, options);
@@ -159,7 +159,7 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
 
   var name = 'min-sheets-same';
 	var options = {
-		maxSelectors: 5,
+		maxSelectors: 6,
 		minSheets: 4
 	};
 	var result = sakugawa(twenty, options);
