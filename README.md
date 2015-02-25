@@ -113,7 +113,7 @@ Available options are shown below and assigned to their default values:
 var options = {
   maxSelectors: 4090,
   mediaQueries: 'normal',
-  filename: 'input.css',
+  filename: 'input.css', // Not used at the moment for anything
   minSheets: 1
 };
 ```
