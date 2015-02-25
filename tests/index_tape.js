@@ -14,7 +14,7 @@ var tape = require('tape');
 var sakugawa = require('../lib/index');
 
 // This CSS file has 5 selectors
-var twenty = fs.readFileSync(__dirname + '/fixtures/twenty.css', 'utf8');
+var twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
 
 
 var saveResults = function (results, prefix) {
@@ -35,18 +35,6 @@ tape('dummy test', function (test) {
   test.deepEqual(sakugawa(styles), [styles]);
 });
 
-/*
-tape('pure test', function (test) {
-  test.plan(1);
-
-	var pure = fs.readFileSync(__dirname + '/fixtures/pure.css', 'utf8');
-	var expected1 = fs.readFileSync(__dirname + '/expected/pure_1.css', 'utf8');
-	var expected2 = fs.readFileSync(__dirname + '/expected/pure_2.css', 'utf8');
-  var pages = sakugawa(pure);
-  test.equal(pages, [expected1, expected2]);
-});
-*/
-
 tape('max selectors lower than total', function (test) {
   test.plan(2);
 
@@ -58,7 +46,7 @@ tape('max selectors lower than total', function (test) {
 	saveResults(result, name);
   test.equal(result.length, 2);
 
-	var expected1 = fs.readFileSync(__dirname + '/expected/' + name + '_1.css', 'utf8');
+	var expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
 	test.equal(result[0], expected1);
 });
 
@@ -166,4 +154,27 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
 	saveResults(result, name);
   test.equal(result.length, 4);
 
+});
+
+
+tape('error case when no styles empty', function (test) {
+  test.plan(1);
+
+	try {
+		var result = sakugawa('');
+	}
+	catch (error) {
+  	test.equal(error.message, 'styles must not be empty');
+	}
+});
+
+tape('error case when styles are not a string', function (test) {
+  test.plan(1);
+
+	try {
+		var result = sakugawa(42);
+	}
+	catch (error) {
+  	test.equal(error.message, 'styles must be a string');
+	}
 });

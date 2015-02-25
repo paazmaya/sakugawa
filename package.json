@@ -1,6 +1,6 @@
 {
   "name": "sakugawa",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CSS splitter, filter and organiser",
   "homepage": "https://github.com/paazmaya/sakugawa",
   "author": {
@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "node tests/index_tape.js",
-    "coverage": ""
+    "coverage": "covert tests/index_tape.js"
   },
   "bin": {
     "sakugawa": "bin/sakugawa.js"
@@ -53,6 +53,7 @@
     "css": "~2.2"
   },
   "devDependencies": {
+    "covert": "~1.0",
     "eslint": "~0.15",
     "tape": "~3.5"
   }

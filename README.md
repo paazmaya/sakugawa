@@ -133,9 +133,13 @@ while the API provided is only touching strings.
 
 [Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
 
+Unit tests are written with [tape]() and can be executed with `npm test`.
+Code coverage is inspected with [covert](https://github.com/substack/covert) and
+can be executed with `npm run coverage`. Please make sure it is 100% at all times.
 
 ## Version history
 
+* v0.3.2 (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
 * v0.3.1 (2015-02-23) Use latest `css` version, namely 2.2.0, which was release five days ago
 * v0.3.0 (2015-02-23) Possibility to specify minimum amount of generated CSS, #7
 * v0.2.1 (2014-12-05) Better documentation and command line bin path configured so now usable via global install
