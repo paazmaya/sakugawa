@@ -17,13 +17,14 @@ var sakugawa = require('../lib/index');
 var twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
 
 // Helper to save files when creating a new test in order to easily inspect the result
+/*
 var saveResults = function (results, prefix) {
 	for (var i = 0; i < results.length; ++i) {
 		var stuff = results[i];
 		fs.writeFileSync(__dirname + '/expected/' + prefix + '_' + (i + 1) + '.css', stuff, 'utf8');
 	}
 };
-
+*/
 
 tape('dummy test', function (test) {
   test.plan(2);
@@ -173,7 +174,6 @@ tape('@charset is preserved in all resulting sheets', function (test) {
 	};
 	var result = sakugawa(charset, options);
   test.equal(result.length, 2);
-  saveResults(result, name);
 
   result.forEach(function (res) {
   	test.equal(res.indexOf('@charset'), 0);
