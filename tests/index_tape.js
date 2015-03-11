@@ -16,14 +16,13 @@ var sakugawa = require('../lib/index');
 // This CSS file has 5 selectors
 var twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
 
-
+// Helper to save files when creating a new test in order to easily inspect the result
 var saveResults = function (results, prefix) {
 	for (var i = 0; i < results.length; ++i) {
 		var stuff = results[i];
-		//fs.writeFileSync(__dirname + '/expected/' + prefix + '_' + (i + 1) + '.css', stuff, 'utf8');
+		fs.writeFileSync(__dirname + '/expected/' + prefix + '_' + (i + 1) + '.css', stuff, 'utf8');
 	}
 };
-
 
 
 tape('dummy test', function (test) {
@@ -43,13 +42,11 @@ tape('max selectors lower than total', function (test) {
 		maxSelectors: 16
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 2);
 
 	var expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
 	test.equal(result[0], expected1);
 });
-
 
 tape('max selectors higher than total', function (test) {
   test.plan(1);
@@ -59,9 +56,7 @@ tape('max selectors higher than total', function (test) {
 		maxSelectors: 24
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 1);
-
 });
 
 tape('max selectors same as total', function (test) {
@@ -72,9 +67,7 @@ tape('max selectors same as total', function (test) {
 		maxSelectors: 20
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 1);
-
 });
 
 tape('media queries separated', function (test) {
@@ -86,9 +79,7 @@ tape('media queries separated', function (test) {
 		mediaQueries: 'separate'
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 2);
-
 });
 
 tape('media queries ignored', function (test) {
@@ -100,10 +91,9 @@ tape('media queries ignored', function (test) {
 		mediaQueries: 'ignore'
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 1);
-
 });
+
 /*
 tape('filename option gets used', function (test) {
   test.plan(1);
@@ -124,7 +114,6 @@ tape('two empty files due to minimum number of sheets being high', function (tes
 		minSheets: 4
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 4);
 });
 
@@ -137,9 +126,7 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
 		minSheets: 2
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 3);
-
 });
 
 tape('minSheets irrelevant when same as resulting number', function (test) {
@@ -151,11 +138,8 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
 		minSheets: 4
 	};
 	var result = sakugawa(twenty, options);
-	saveResults(result, name);
   test.equal(result.length, 4);
-
 });
-
 
 tape('error case when no styles empty', function (test) {
   test.plan(1);
@@ -177,4 +161,20 @@ tape('error case when styles are not a string', function (test) {
 	catch (error) {
   	test.equal(error.message, 'styles must be a string');
 	}
+});
+
+tape('@charset is preserved in all resulting sheets', function (test) {
+  test.plan(3);
+	var charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
+
+  var name = 'charset-preserved';
+	var options = {
+		maxSelectors: 4
+	};
+	var result = sakugawa(charset, options);
+  test.equal(result.length, 2);
+
+  result.forEach(function (res) {
+  	test.equal(res.indexOf('@charset'), 0);
+  });
 });

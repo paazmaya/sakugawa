@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+
+.base {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka
+}
+
+.pure-img {
+  max-width: 100%;
+  height: auto;
+  display: block
+}
+
+.pure-button {
+  -ms-user-select: none;
+  user-select: none
+}
+
+.pure-button {
+  border-radius: 2px
+}
+
+.pure-button:focus {
+  outline: 0
+}
+
+.pure-button-active, .pure-button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset
+}
