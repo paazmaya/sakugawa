@@ -9,3 +9,6 @@ build:
         name: ESLint everything!
         code: npm run lint
     - npm-test
+    - script:
+        name: Code coverage with Covert
+        code: npm run coverage

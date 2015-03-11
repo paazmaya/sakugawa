@@ -139,6 +139,7 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## Version history
 
+* v0.4.0 (2015-03-11) Preserve `@charset` rules, #5
 * v0.3.2 (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
 * v0.3.1 (2015-02-23) Use latest `css` version, namely 2.2.0, which was release five days ago
 * v0.3.0 (2015-02-23) Possibility to specify minimum amount of generated CSS, #7

@@ -173,6 +173,7 @@ tape('@charset is preserved in all resulting sheets', function (test) {
 	};
 	var result = sakugawa(charset, options);
   test.equal(result.length, 2);
+  saveResults(result, name);
 
   result.forEach(function (res) {
   	test.equal(res.indexOf('@charset'), 0);
