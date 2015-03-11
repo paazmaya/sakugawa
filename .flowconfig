@@ -1,6 +1,0 @@
-[ignore]
-./flow/*
-
-[include]
-./lib
-./bin

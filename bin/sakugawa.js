@@ -90,7 +90,7 @@ if (args._) {
   var opts = {
     maxSelectors: args.n,
     minSheets: args.M,
-    mediaQueries: args.m,
+    mediaQueries: args.m
   };
 
   files.forEach(function eachFiles(file) {
