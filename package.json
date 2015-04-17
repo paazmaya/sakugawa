@@ -56,6 +56,6 @@
   "devDependencies": {
     "covert": "~1.0",
     "eslint": "~0.19",
-    "tape": "~3.5"
+    "tape": "~4.0"
   }
 }
