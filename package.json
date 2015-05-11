@@ -54,8 +54,8 @@
     "css": "~2.2"
   },
   "devDependencies": {
-    "covert": "~1.0",
-    "eslint": "~0.20",
+    "covert": "^1.1.0",
+    "eslint": "^0.21.0",
     "tape": "~4.0"
   }
 }
