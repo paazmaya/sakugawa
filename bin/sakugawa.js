@@ -36,6 +36,12 @@ var cmdOptions = {
     type: 'number',
     default: 4090
   },
+  i: {
+    description: 'Maximum number of @import rules per output file',
+    alias: 'max-imports',
+    type: 'number',
+    default: 4
+  },
   s: {
     description: 'Output CSS file suffix',
     alias: 'suffix',

@@ -1,6 +1,6 @@
 {
   "name": "sakugawa",
-  "version": "0.4.1",
+  "version": "0.5.0-dev",
   "description": "CSS splitter, filter and organiser",
   "homepage": "https://github.com/paazmaya/sakugawa",
   "author": {
@@ -33,6 +33,7 @@
     "ie8",
     "ie9",
     "media-query",
+    "import",
     "split",
     "filter",
     "organize"

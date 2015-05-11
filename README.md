@@ -13,6 +13,10 @@
 selectors present in a single CSS file. This limitation of 4095 selectors created the
 need for CSS splitter, which might be the main use case of this task runner plugin.
 
+Those versions also come with other number related limits, such as the amount of
+`@import` rules used in a single file. That limit is 31 for sheets and the imported
+sheet can have descending imports up to 4 levels total.
+
 Since IE8 and earlier, do not support media queries, but IE9 does, there is an option for handling
 media queries differently, based on the targeted IE version. By separating media queries in
 to a different file, it will allow the to include that CSS file [conditionally][] only when
@@ -59,6 +63,7 @@ Options:
   -h, --help             Show help
   -V, --version          Show version information
   -n, --max-selectors    Maximum number of CSS selectors per output file
+  -i, --max-imports      Maximum number of @import rules per output file
   -s, --suffix           Output CSS file suffix
   -M, --minimum-files    Minimum number of output CSS files
   -m, --media-queries    Media query handling, separation to different file (separate) or ignorance (ignore). By default included
@@ -139,6 +144,7 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## Version history
 
+* v0.5.0 (2015-05-xx) Limit the number of `@import` rules, #2
 * v0.4.1 (2015-03-11) One `var` too many in the previous release
 * v0.4.0 (2015-03-11) Preserve `@charset` rules, #5
 * v0.3.2 (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
