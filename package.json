@@ -51,12 +51,12 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "bossy": "~1.0",
+    "bossy": "^2.0.0",
     "css": "~2.2"
   },
   "devDependencies": {
     "covert": "~1.1",
-    "eslint": "^0.22.1",
-    "tape": "~4.0"
+    "eslint": "^1.1.0",
+    "tape": "^4.2.0"
   }
 }
