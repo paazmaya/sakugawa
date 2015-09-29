@@ -1,6 +1,9 @@
 box: wercker/nodejs
 build:
   steps:
+    - script:
+        name: Install Node.js 4
+        code: nvm install 4
     - npm-install
     - script:
         name: nodejs and npm version information
