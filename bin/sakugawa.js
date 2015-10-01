@@ -14,9 +14,11 @@
 var fs = require('fs'),
   path = require('path');
 
-// It might be good for organisation, to have another variable set for other modules
-var Bossy = require('bossy'),
-  sakugawa = require('../lib');
+// It might be good for organisation, to have another variable set for local modules
+var Bossy = require('bossy');
+
+// Local files
+var sakugawa = require('../lib');
 
 // Default command line options
 var cmdOptions = {
