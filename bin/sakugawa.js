@@ -11,7 +11,7 @@
 'use strict';
 
 // Usually first variables defined are the ones requiring native Node.js modules
-var fs = require('fs'),
+const fs = require('fs'),
   path = require('path');
 
 // It might be good for organisation, to have another variable set for local modules
