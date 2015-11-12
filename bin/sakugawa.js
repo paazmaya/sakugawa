@@ -4,7 +4,7 @@
  * Sakugawa
  * https://github.com/paazmaya/sakugawa
  *
- * Copyright (c) Juga Paazmaya
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
  * Licensed under the MIT license.
  */
 
@@ -15,7 +15,7 @@ const fs = require('fs'),
   path = require('path');
 
 // It might be good for organisation, to have another variable set for local modules
-var Bossy = require('bossy');
+const Bossy = require('bossy');
 
 // Local files
 var sakugawa = require('../lib');

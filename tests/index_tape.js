@@ -3,7 +3,7 @@
  * Sakugawa
  * https://github.com/paazmaya/sakugawa
  *
- * Copyright (c) Juga Paazmaya
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
  * Licensed under the MIT license.
  */
 

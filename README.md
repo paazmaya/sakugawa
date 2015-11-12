@@ -144,20 +144,20 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## Version history
 
-* v0.5.0 (2015-05-xx) Limit the number of `@import` rules, #2
-* v0.4.1 (2015-03-11) One `var` too many in the previous release
-* v0.4.0 (2015-03-11) Preserve `@charset` rules, #5
-* v0.3.2 (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
-* v0.3.1 (2015-02-23) Use latest `css` version, namely 2.2.0, which was release five days ago
-* v0.3.0 (2015-02-23) Possibility to specify minimum amount of generated CSS, #7
-* v0.2.1 (2014-12-05) Better documentation and command line bin path configured so now usable via global install
-* v0.2.0 (2014-11-19) Speed improvements
-* v0.1.0 (2014-11-17) Initial release with splitting against selector count and media query filtering
+* `v0.5.0` (2015-xx-xx) Limit the number of `@import` rules, #2
+* `v0.4.1` (2015-03-11) One `var` too many in the previous release
+* `v0.4.0` (2015-03-11) Preserve `@charset` rules, #5
+* `v0.3.2` (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
+* `v0.3.1` (2015-02-23) Use latest `css` version, namely `2.2.0`, which was release five days ago
+* `v0.3.0` (2015-02-23) Possibility to specify minimum amount of generated CSS, #7
+* `v0.2.1` (2014-12-05) Better documentation and command line bin path configured so now usable via global install
+* `v0.2.0` (2014-11-19) Speed improvements
+* `v0.1.0` (2014-11-17) Initial release with splitting against selector count and media query filtering
 
 
 ## License
 
-Copyright (c) Juga Paazmaya <paazmaya@yahoo.com>
+Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
 
 Licensed under the [MIT license](LICENSE).
 
