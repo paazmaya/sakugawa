@@ -52,6 +52,8 @@ For local installation, in which you could use `--save` or `--save-dev`:
 npm install sakugawa
 ```
 
+Please note that this tool requires the minimum [Node.js](https://nodejs.org/en/)
+version to be `4.2.0`, which is the Long Term Support (LTS) version.
 
 ## Command line usage
 
@@ -144,7 +146,7 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## Version history
 
-* `v0.5.0` (2015-xx-xx) Limit the number of `@import` rules, #2
+* `v0.5.0` (2015-11-16) Limit the number of `@import` rules, #2. Version outputs only `0.5.0`. Require minimum of Node.js LTS version `4.2.0`
 * `v0.4.1` (2015-03-11) One `var` too many in the previous release
 * `v0.4.0` (2015-03-11) Preserve `@charset` rules, #5
 * `v0.3.2` (2015-02-25) Minimum number of CSS sheets was not followed. Code coverage with unit tests at 100%, #1 and #8
@@ -157,7 +159,7 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## License
 
-Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
+Copyright (c) [Juga Paazmaya](http://paazmaya.fi) <paazmaya@yahoo.com>
 
 Licensed under the [MIT license](LICENSE).
 

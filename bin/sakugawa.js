@@ -18,7 +18,7 @@ const fs = require('fs'),
 const Bossy = require('bossy');
 
 // Local files
-var sakugawa = require('../lib');
+const sakugawa = require('../lib');
 
 // Default command line options
 var cmdOptions = {
@@ -81,7 +81,7 @@ if (args.h) {
 if (args.V) {
   var json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
   var pkg = JSON.parse(json);
-  console.log('v' + pkg.version);
+  console.log(pkg.version);
   return;
 }
 
