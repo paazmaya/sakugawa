@@ -10,7 +10,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc bin/sakugawa.js lib/index.js",
+    "lint": "eslint -c .eslintrc.json bin/sakugawa.js lib/index.js",
     "test": "node tests/index_tape.js",
     "coverage": "covert tests/index_tape.js"
   },
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "covert": "~1.1",
-    "eslint": "~1.9",
+    "eslint": "~1.10",
     "tape": "~4.2"
   }
 }
