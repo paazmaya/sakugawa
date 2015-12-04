@@ -9,12 +9,12 @@
 
 'use strict';
 
-var fs = require('fs');
-var tape = require('tape');
-var sakugawa = require('../lib/index');
+const fs = require('fs');
+const tape = require('tape');
+const sakugawa = require('../lib/index');
 
 // This CSS file has 5 selectors
-var twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
+const twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
 
 // Helper to save files when creating a new test in order to easily inspect the result
 /*
@@ -31,7 +31,7 @@ tape('dummy test', function (test) {
 
   test.equal(typeof sakugawa, 'function');
 
-  var styles = 'body {\n  color: rebeccapurple;\n}';
+  const styles = 'body {\n  color: rebeccapurple;\n}';
   test.deepEqual(sakugawa(styles), [styles]);
 });
 
@@ -39,13 +39,13 @@ tape('max selectors lower than total', function (test) {
   test.plan(2);
 
   var name = 'max-selectors-lower';
-	var options = {
+	const options = {
 		maxSelectors: 16
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 2);
 
-	var expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
+	const expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
 	test.equal(result[0], expected1);
 });
 
@@ -53,10 +53,10 @@ tape('max selectors higher than total', function (test) {
   test.plan(1);
 
   var name = 'max-selectors-higher';
-	var options = {
+	const options = {
 		maxSelectors: 24
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 1);
 });
 
@@ -64,7 +64,7 @@ tape('max selectors same as total', function (test) {
   test.plan(1);
 
   var name = 'max-selectors-same';
-	var options = {
+	const options = {
 		maxSelectors: 20
 	};
 	var result = sakugawa(twenty, options);
@@ -75,7 +75,7 @@ tape('media queries separated', function (test) {
   test.plan(1);
 
   var name = 'media-queries-separated';
-	var options = {
+	const options = {
 		maxSelectors: 50,
 		mediaQueries: 'separate'
 	};
@@ -87,7 +87,7 @@ tape('media queries ignored', function (test) {
   test.plan(1);
 
   var name = 'media-queries-ignored';
-	var options = {
+	const options = {
 		maxSelectors: 18,
 		mediaQueries: 'ignore'
 	};
@@ -110,7 +110,7 @@ tape('two empty files due to minimum number of sheets being high', function (tes
   test.plan(1);
 
   var name = 'min-sheets-higher';
-	var options = {
+	const options = {
 		maxSelectors: 12,
 		minSheets: 4
 	};
@@ -122,7 +122,7 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
   test.plan(1);
 
   var name = 'min-sheets-lower';
-	var options = {
+	const options = {
 		maxSelectors: 8,
 		minSheets: 2
 	};
@@ -134,7 +134,7 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
   test.plan(1);
 
   var name = 'min-sheets-same';
-	var options = {
+	const options = {
 		maxSelectors: 6,
 		minSheets: 4
 	};
@@ -146,10 +146,10 @@ tape('error case when no styles empty', function (test) {
   test.plan(1);
 
 	try {
-		var result = sakugawa('');
+		const result = sakugawa('');
 	}
 	catch (error) {
-  	test.equal(error.message, 'styles must not be empty');
+    test.equal(error.message, 'styles must not be empty');
 	}
 });
 
@@ -157,25 +157,25 @@ tape('error case when styles are not a string', function (test) {
   test.plan(1);
 
 	try {
-		var result = sakugawa(42);
+		const result = sakugawa(42);
 	}
 	catch (error) {
-  	test.equal(error.message, 'styles must be a string');
+    test.equal(error.message, 'styles must be a string');
 	}
 });
 
 tape('@charset is preserved in all resulting sheets', function (test) {
   test.plan(3);
-	var charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
+	const charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
 
   var name = 'charset-preserved';
-	var options = {
+	const options = {
 		maxSelectors: 4
 	};
-	var result = sakugawa(charset, options);
+	const result = sakugawa(charset, options);
   test.equal(result.length, 2);
 
   result.forEach(function (res) {
-  	test.equal(res.indexOf('@charset'), 0);
+    test.equal(res.indexOf('@charset'), 0);
   });
 });

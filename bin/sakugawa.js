@@ -21,7 +21,7 @@ const Bossy = require('bossy');
 const sakugawa = require('../lib');
 
 // Default command line options
-var cmdOptions = {
+const cmdOptions = {
   h: {
     description: 'Show help',
     alias: 'help',
@@ -65,7 +65,7 @@ var cmdOptions = {
 };
 
 // Initialise and parse command line arguments against the default options
-var args = Bossy.parse(cmdOptions);
+const args = Bossy.parse(cmdOptions);
 
 // In case parsing failed, stop execution with an error
 if (args instanceof Error) {
@@ -79,35 +79,40 @@ if (args.h) {
   return;
 }
 if (args.V) {
-  var json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
-  var pkg = JSON.parse(json);
-  console.log(pkg.version);
+  const json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
+  try {
+    const pkg = JSON.parse(json);
+    console.log(pkg.version);
+  }
+  catch (error) {
+    console.error('Could not parse "package.json", very strange...');
+  }
   return;
 }
 
 // files, an array or string
 if (args._) {
-  var files = args._;
+  let files = args._;
   if (typeof files === 'string') {
     files = [files];
   }
-  files = files.filter(function filterFiles(file) {
+  files = files.filter((file) => {
     return fs.existsSync(file);
   });
 
-  var opts = {
+  const opts = {
     maxSelectors: args.n,
     minSheets: args.M,
     mediaQueries: args.m
   };
 
-  files.forEach(function eachFiles(file) {
+  files.forEach((file) => {
     console.log('Reading ' + file);
-    var styles = fs.readFileSync(file, 'utf8');
-    var pages = sakugawa(styles, opts);
+    const styles = fs.readFileSync(file, 'utf8');
+    const pages = sakugawa(styles, opts);
     pages.forEach(function eachPages(page, index) {
       // page is a CSS string
-      var pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
+      const pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
       console.log('Writing ' + pageFile);
       fs.writeFileSync(pageFile, page, 'utf8');
     });

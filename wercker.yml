@@ -11,5 +11,5 @@ build:
         code: npm run lint
     - npm-test
     - script:
-        name: Code coverage with Covert
+        name: Code coverage with Istanbul and post to codecov.io
         code: npm run coverage
