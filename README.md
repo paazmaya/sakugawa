@@ -148,7 +148,8 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 ## Version history
 
 * `v0.5.1` (2015-12-04)
-    - Code coverage report at codecov #8
+    - Code coverage report at codecov #24
+    - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js
 * `v0.5.0` (2015-11-16)
     - Limit the number of `@import` rules, #2
     - Version outputs only `0.5.0`
