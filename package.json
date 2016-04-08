@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "codecov": "^1.0.1",
-    "eslint": "~2.5",
-    "istanbul": "^0.4.2",
+    "eslint": "~2.7",
+    "istanbul": "^0.4.3",
     "tape": "~4.5"
   }
 }
