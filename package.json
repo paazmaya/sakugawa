@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "codecov": "~1.0",
-    "eslint": "~2.9",
-    "eslint-config-paazmaya": "~2.0",
+    "eslint": "~2.11",
+    "eslint-config-paazmaya": "~2.1",
     "istanbul": "~0.4",
     "tape": "~4.5"
   }
