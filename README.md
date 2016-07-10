@@ -147,6 +147,8 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## Version history
 
+* `v0.5.2` (2016-07-10)
+    - Use `Object.assign()` for cloning AST object, #26
 * `v0.5.1` (2015-12-04)
     - Code coverage report at codecov #24
     - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js

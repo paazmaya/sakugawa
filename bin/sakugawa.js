@@ -79,7 +79,7 @@ if (args.h) {
   return;
 }
 if (args.V) {
-  const json = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
+  const json = fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8');
   try {
     const pkg = JSON.parse(json);
     console.log(pkg.version);

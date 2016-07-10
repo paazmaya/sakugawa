@@ -33,11 +33,15 @@ var Sakugawa = function Sakugawa(styles, options) {
 
 Sakugawa.prototype._clone = function createClone(ast) {
 
-  // Store temporarily elsewhere to speed up JSON conversion
+  // Store temporarily elsewhere to speed up cloning
   const origRules = ast.stylesheet.rules;
   ast.stylesheet.rules = [];
 
-  const clone = JSON.parse(JSON.stringify(ast));
+  const clone = Object.assign({
+    stylesheet: {
+      rules: []
+    }
+  }, ast);
   ast.stylesheet.rules = origRules;
 
   clone.stylesheet.rules = [];

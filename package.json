@@ -1,16 +1,16 @@
 {
   "name": "sakugawa",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "CSS splitter, filter and organiser for IE9 and before",
   "homepage": "https://github.com/paazmaya/sakugawa",
   "author": {
     "name": "Juga Paazmaya",
     "email": "paazmaya@yahoo.com",
-    "url": "http://paazmaya.fi"
+    "url": "https://paazmaya.fi"
   },
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc.json bin/sakugawa.js lib/index.js",
+    "lint": "eslint -c .eslintrc.json bin/sakugawa.js index.js",
     "test": "node tests/index_tape.js",
     "coverage": "istanbul cover tests/index_tape.js && codecov"
   },
@@ -19,7 +19,7 @@
   },
   "files": [
     "bin",
-    "lib",
+    "index.js",
     "README.md",
     "LICENSE"
   ],
@@ -52,7 +52,7 @@
   "devDependencies": {
     "codecov": "~1.0",
     "eslint": "~3.0",
-    "eslint-config-paazmaya": "~2.2",
+    "eslint-config-paazmaya": "~2.3",
     "istanbul": "~0.4",
     "tape": "~4.6"
   }

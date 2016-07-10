@@ -3,7 +3,7 @@
  * Sakugawa
  * https://github.com/paazmaya/sakugawa
  *
- * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (https://paazmaya.fi)
  * Licensed under the MIT license.
  */
 
@@ -11,7 +11,7 @@
 
 const fs = require('fs');
 const tape = require('tape');
-const sakugawa = require('../lib/index');
+const sakugawa = require('../index');
 
 // This CSS file has 5 selectors
 const twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
@@ -38,7 +38,7 @@ tape('dummy test', function (test) {
 tape('max selectors lower than total', function (test) {
   test.plan(2);
 
-  var name = 'max-selectors-lower';
+  const name = 'max-selectors-lower';
 	const options = {
 		maxSelectors: 16
 	};
@@ -52,7 +52,7 @@ tape('max selectors lower than total', function (test) {
 tape('max selectors higher than total', function (test) {
   test.plan(1);
 
-  var name = 'max-selectors-higher';
+  const name = 'max-selectors-higher';
 	const options = {
 		maxSelectors: 24
 	};
@@ -63,35 +63,35 @@ tape('max selectors higher than total', function (test) {
 tape('max selectors same as total', function (test) {
   test.plan(1);
 
-  var name = 'max-selectors-same';
+  const name = 'max-selectors-same';
 	const options = {
 		maxSelectors: 20
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 1);
 });
 
 tape('media queries separated', function (test) {
   test.plan(1);
 
-  var name = 'media-queries-separated';
+  const name = 'media-queries-separated';
 	const options = {
 		maxSelectors: 50,
 		mediaQueries: 'separate'
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 2);
 });
 
 tape('media queries ignored', function (test) {
   test.plan(1);
 
-  var name = 'media-queries-ignored';
+  const name = 'media-queries-ignored';
 	const options = {
 		maxSelectors: 18,
 		mediaQueries: 'ignore'
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 1);
 });
 
@@ -99,7 +99,7 @@ tape('media queries ignored', function (test) {
 tape('filename option gets used', function (test) {
   test.plan(1);
 
-	var options = {
+	const options = {
 		filename: 'very-secret.css'
 	};
 
@@ -109,12 +109,12 @@ tape('filename option gets used', function (test) {
 tape('two empty files due to minimum number of sheets being high', function (test) {
   test.plan(1);
 
-  var name = 'min-sheets-higher';
+  const name = 'min-sheets-higher';
 	const options = {
 		maxSelectors: 12,
 		minSheets: 4
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 4);
 });
 
@@ -133,12 +133,12 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
 tape('minSheets irrelevant when same as resulting number', function (test) {
   test.plan(1);
 
-  var name = 'min-sheets-same';
+  const name = 'min-sheets-same';
 	const options = {
 		maxSelectors: 6,
 		minSheets: 4
 	};
-	var result = sakugawa(twenty, options);
+	const result = sakugawa(twenty, options);
   test.equal(result.length, 4);
 });
 
@@ -168,7 +168,7 @@ tape('@charset is preserved in all resulting sheets', function (test) {
   test.plan(3);
 	const charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
 
-  var name = 'charset-preserved';
+  const name = 'charset-preserved';
 	const options = {
 		maxSelectors: 4
 	};
