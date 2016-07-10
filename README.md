@@ -177,7 +177,7 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 
 ## License
 
-Copyright (c) [Juga Paazmaya](http://paazmaya.fi) <paazmaya@yahoo.com>
+Copyright (c) [Juga Paazmaya](https://paazmaya.fi) <paazmaya@yahoo.com>
 
 Licensed under the [MIT license](LICENSE).
 

@@ -19,7 +19,7 @@ const twenty = fs.readFileSync('tests/fixtures/twenty.css', 'utf8');
 // Helper to save files when creating a new test in order to easily inspect the result
 /*
 var saveResults = function (results, prefix) {
-	for (var i = 0; i < results.length; ++i) {
+	for (let i = 0; i < results.length; ++i) {
 		var stuff = results[i];
 		fs.writeFileSync(__dirname + '/expected/' + prefix + '_' + (i + 1) + '.css', stuff, 'utf8');
 	}
@@ -43,10 +43,10 @@ tape('max selectors lower than total', function (test) {
 		maxSelectors: 16
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 2);
+  test.equal(result.length, 2, name);
 
 	const expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
-	test.equal(result[0], expected1);
+	test.equal(result[0], expected1, name);
 });
 
 tape('max selectors higher than total', function (test) {
@@ -68,7 +68,7 @@ tape('max selectors same as total', function (test) {
 		maxSelectors: 20
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 1);
+  test.equal(result.length, 1, name);
 });
 
 tape('media queries separated', function (test) {
@@ -80,7 +80,7 @@ tape('media queries separated', function (test) {
 		mediaQueries: 'separate'
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 2);
+  test.equal(result.length, 2, name);
 });
 
 tape('media queries ignored', function (test) {
@@ -92,7 +92,7 @@ tape('media queries ignored', function (test) {
 		mediaQueries: 'ignore'
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 1);
+  test.equal(result.length, 1, name);
 });
 
 /*
@@ -115,7 +115,7 @@ tape('two empty files due to minimum number of sheets being high', function (tes
 		minSheets: 4
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 4);
+  test.equal(result.length, 4, name);
 });
 
 tape('minSheets irrelevant when lower than resulting number', function (test) {
@@ -127,7 +127,7 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
 		minSheets: 2
 	};
 	var result = sakugawa(twenty, options);
-  test.equal(result.length, 3);
+  test.equal(result.length, 3, name);
 });
 
 tape('minSheets irrelevant when same as resulting number', function (test) {
@@ -139,7 +139,7 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
 		minSheets: 4
 	};
 	const result = sakugawa(twenty, options);
-  test.equal(result.length, 4);
+  test.equal(result.length, 4, name);
 });
 
 tape('error case when no styles empty', function (test) {
@@ -173,7 +173,7 @@ tape('@charset is preserved in all resulting sheets', function (test) {
 		maxSelectors: 4
 	};
 	const result = sakugawa(charset, options);
-  test.equal(result.length, 2);
+  test.equal(result.length, 2, name);
 
   result.forEach(function (res) {
     test.equal(res.indexOf('@charset'), 0);

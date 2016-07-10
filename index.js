@@ -2,7 +2,7 @@
  * Sakugawa
  * https://github.com/paazmaya/sakugawa
  *
- * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (http://paazmaya.fi)
+ * Copyright (c) Juga Paazmaya <paazmaya@yahoo.com> (https://paazmaya.fi)
  * Licensed under the MIT license.
  */
 
@@ -37,11 +37,7 @@ Sakugawa.prototype._clone = function createClone(ast) {
   const origRules = ast.stylesheet.rules;
   ast.stylesheet.rules = [];
 
-  const clone = Object.assign({
-    stylesheet: {
-      rules: []
-    }
-  }, ast);
+  const clone = JSON.parse(JSON.stringify(ast));
   ast.stylesheet.rules = origRules;
 
   clone.stylesheet.rules = [];
