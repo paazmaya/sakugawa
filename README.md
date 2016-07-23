@@ -2,12 +2,13 @@
 
 > CSS splitter, filter and organiser for IE9 and before
 
-![Mr Sakugawa](./logo.png)
+![Mr Sakugawa](logo.png)
 
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index?flat)](https://github.com/igrigorik/ga-beacon)
 [![Dependency Status](https://img.shields.io/david/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa)
 [![devDependency Status](https://img.shields.io/david/dev/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 [![wercker status](https://app.wercker.com/status/d1673adc6fdf3e5c3e4234986517ebc3/s "wercker status")](https://app.wercker.com/project/bykey/d1673adc6fdf3e5c3e4234986517ebc3)
+[![Windows build status](https://ci.appveyor.com/api/projects/status/67kt1qypoltk3dqf/branch/master?svg=true)](https://ci.appveyor.com/project/paazmaya/sakugawa/branch/master)
 [![codecov.io](https://codecov.io/github/paazmaya/sakugawa/coverage.svg?branch=master)](https://codecov.io/github/paazmaya/sakugawa?branch=master)
 
 [Internet Explorer versions from 6 up to 9 come with a limitation][ieinternals] for
@@ -148,7 +149,8 @@ can be executed with `npm run coverage`. Please make sure it is 100% at all time
 ## Version history
 
 * `v0.5.2` (2016-07-10)
-    - Use `Object.assign()` for cloning AST object, #26
+    - ~~Use `Object.assign()` for cloning AST object, #26~~, did not work as assumed
+    - Start testing with Windows at AppVeyor
 * `v0.5.1` (2015-12-04)
     - Code coverage report at codecov #24
     - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js
