@@ -150,11 +150,11 @@ Please make sure it is over 90% at all times.
 ## Version history
 
 * `v0.5.3` (2016-08-08)
+    - Start testing with Windows at AppVeyor
     - Move code coverage from `instanbul` to `nyc`
     - Document the default value for `--media-queries` command line option
 * `v0.5.2` (2016-07-10)
     - ~~Use `Object.assign()` for cloning AST object, #26~~, did not work as assumed
-    - Start testing with Windows at AppVeyor
 * `v0.5.1` (2015-12-04)
     - Code coverage report at codecov #24
     - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js
