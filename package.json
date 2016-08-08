@@ -11,12 +11,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.json bin/sakugawa.js index.js",
-    "test": "node tests/index_tape.js",
-    "coverage": "istanbul cover tests/index_tape.js && codecov"
+    "test": "tape tests/*_test.js",
+    "coverage": "istanbul cover tests/*_test.js && codecov"
   },
-  "bin": {
-    "sakugawa": "bin/sakugawa.js"
-  },
+  "bin": "bin/sakugawa.js",
   "files": [
     "bin",
     "index.js",

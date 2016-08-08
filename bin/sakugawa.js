@@ -18,7 +18,7 @@ const fs = require('fs'),
 const Bossy = require('bossy');
 
 // Local files
-const sakugawa = require('../lib');
+const sakugawa = require('../index');
 
 // Default command line options
 const cmdOptions = {
@@ -73,11 +73,6 @@ if (args instanceof Error) {
   return;
 }
 
-// In case help or version information is specifically requested, only that should be outputted
-if (args.h) {
-  console.log(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
-  return;
-}
 if (args.V) {
   const json = fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8');
   try {
@@ -87,6 +82,12 @@ if (args.V) {
   catch (error) {
     console.error('Could not parse "package.json", very strange...');
   }
+  return;
+}
+
+// In case help or version information is specifically requested, only that should be outputted
+if (args.h || !args._) {
+  console.log(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
   return;
 }
 
@@ -117,7 +118,4 @@ if (args._) {
       fs.writeFileSync(pageFile, page, 'utf8');
     });
   });
-}
-else {
-  console.error('No files defined');
 }
