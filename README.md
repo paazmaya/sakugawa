@@ -70,7 +70,7 @@ Options:
   -i, --max-imports      Maximum number of @import rules per output file
   -s, --suffix           Output CSS file suffix
   -M, --minimum-files    Minimum number of output CSS files
-  -m, --media-queries    Media query handling, separation to different file (separate) or ignorance (ignore). By default included
+  -m, --media-queries    Media query handling, separation to different file (separate) or ignorance (ignore). By default included (normal)
 ```
 
 Example with [Pure CSS](http://purecss.io/ "A set of small, responsive CSS modules that you can use in every web project"):
@@ -142,12 +142,16 @@ while the API provided is only touching strings.
 
 [Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
 
-Unit tests are written with [tape]() and can be executed with `npm test`.
-Code coverage is inspected with [Istanbul](https://github.com/gotwarlost/istanbul) and
-can be executed with `npm run coverage`. Please make sure it is 100% at all times.
+Unit tests are written with [`tape`](https://github.com/substack/tape) and can be executed with `npm test`.
+Code coverage is inspected with [`nyc`](https://github.com/istanbuljs/nyc) and
+can be executed with `npm run coverage` after running `npm test`.
+Please make sure it is over 90% at all times.
 
 ## Version history
 
+* `v0.5.3` (2016-08-08)
+    - Move code coverage from `instanbul` to `nyc`
+    - Document the default value for `--media-queries` command line option
 * `v0.5.2` (2016-07-10)
     - ~~Use `Object.assign()` for cloning AST object, #26~~, did not work as assumed
     - Start testing with Windows at AppVeyor

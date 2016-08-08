@@ -57,10 +57,10 @@ const cmdOptions = {
     default: 1
   },
   m: {
-    description: 'Media query handling, separation to different file (separate) or ignorance (ignore). By default included',
+    description: 'Media query handling, separation to different file (separate) or ignorance (ignore). By default included (normal)',
     alias: 'media-queries',
     type: 'string',
-    valid: ['separate', 'ignore']
+    valid: ['separate', 'ignore', 'normal']
   }
 };
 
