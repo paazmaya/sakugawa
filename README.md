@@ -26,7 +26,6 @@ IE9 is being used. Ideally this would reduce the amount of bytes downloaded by I
 cannot handle the media queries anyhow, and thus prevent downloading something that is not
 even used.
 
-
 ## Background for the name
 
 [Mr Sakugawa (佐久川 寛賀, first name Kanga)](http://en.wikipedia.org/wiki/Sakugawa_Kanga)
@@ -140,7 +139,12 @@ while the API provided is only touching strings.
 
 ## Contributing
 
-[Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
+["A Beginner's Guide to Open Source: The Best Advice for Making your First Contribution"](http://hf.heidilabs.com/blog/a-beginners-guide-to-open-source-making-your-first-contribution).
+
+[Also there is a blog post about "45 Github Issues Dos and Don’ts"](https://davidwalsh.name/45-github-issues-dos-donts).
+
+Linting is done with [ESLint](http://eslint.org) and can be executed with `npm run lint`.
+There should be no errors appearing after any JavaScript file changes.
 
 Unit tests are written with [`tape`](https://github.com/substack/tape) and can be executed with `npm test`.
 Code coverage is inspected with [`nyc`](https://github.com/istanbuljs/nyc) and
@@ -179,7 +183,6 @@ Please make sure it is over 90% at all times.
     - Speed improvements
 * `v0.1.0` (2014-11-17)
     - Initial release with splitting against selector count and media query filtering
-
 
 ## License
 
