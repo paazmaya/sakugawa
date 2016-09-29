@@ -11,7 +11,7 @@
 const css = require('css');
 // const postcss = require('postcss');
 
-var Sakugawa = function Sakugawa(styles, options) {
+const Sakugawa = function Sakugawa(styles, options) {
 
   if (typeof styles !== 'string') {
     throw new Error('styles must be a string');
@@ -49,6 +49,7 @@ Sakugawa.prototype._clone = function createClone(ast) {
   if (charsetRules.length > 0) {
     clone.stylesheet.rules = charsetRules;
   }
+
   return clone;
 };
 
@@ -126,15 +127,18 @@ Sakugawa.prototype.getPages = function getPages() {
   const pages = this.createPages();
   const sheets = pages.map((page) => {
     const str = css.stringify(page);
+
     return str;
   });
   while (sheets.length < this.minSheets) {
     sheets.push('');
   }
+
   return sheets;
 };
 
 module.exports = function exports(styles, options) {
   const s = new Sakugawa(styles, options);
+
   return s.getPages();
 };

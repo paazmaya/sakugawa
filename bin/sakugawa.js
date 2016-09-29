@@ -70,6 +70,7 @@ const args = Bossy.parse(cmdOptions);
 // In case parsing failed, stop execution with an error
 if (args instanceof Error) {
   console.error(args.message);
+
   return;
 }
 
@@ -82,12 +83,14 @@ if (args.V) {
   catch (error) {
     console.error('Could not parse "package.json", very strange...');
   }
+
   return;
 }
 
 // In case help or version information is specifically requested, only that should be outputted
 if (args.h || !args._) {
   console.log(Bossy.usage(cmdOptions, 'sakugawa [options] huge-stylesheet.css [more CSS files]'));
+
   return;
 }
 
