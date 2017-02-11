@@ -41,7 +41,7 @@
     "url": "https://github.com/paazmaya/sakugawa/issues"
   },
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.9.5"
   },
   "dependencies": {
     "bossy": "~3.0",
