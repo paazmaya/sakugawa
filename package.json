@@ -48,10 +48,10 @@
     "css": "~2.2"
   },
   "devDependencies": {
-    "codecov": "~1.0",
-    "eslint": "~3.15",
-    "eslint-config-paazmaya": "~3.1",
-    "nyc": "~10.1",
+    "codecov": "~2.1",
+    "eslint": "~3.18",
+    "eslint-config-paazmaya": "~3.2",
+    "nyc": "~10.2",
     "tape": "~4.6"
   }
 }
