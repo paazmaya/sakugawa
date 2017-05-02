@@ -11,7 +11,7 @@
   "main": "index.js",
   "bin": "bin/sakugawa.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc.json bin/sakugawa.js index.js",
+    "lint": "eslint bin/sakugawa.js index.js",
     "test": "nyc --exclude tests tape tests/*_test.js",
     "coverage": "nyc --exclude tests report --reporter=text-lcov > coverage.lcov && codecov"
   },
@@ -49,9 +49,9 @@
   },
   "devDependencies": {
     "codecov": "~2.1",
-    "eslint": "~3.18",
+    "eslint": "~3.19",
     "eslint-config-paazmaya": "~3.2",
-    "nyc": "~10.2",
+    "nyc": "~10.3",
     "tape": "~4.6"
   }
 }
