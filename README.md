@@ -37,7 +37,6 @@ in which a long six feet wooden staff is used.
 The three forms are called `Sakugawa no kon sho`, `Sakugawa no kon chu`, and `Sakugawa no kon dai`.
 [Here is a Youtube video of one of those forms.](https://www.youtube.com/watch?v=KF4nERzknmI)
 
-
 ## Installation
 
 Install globally, in order to use the command line tool.
