@@ -1,5 +1,4 @@
-box: nodesource/trusty:LTS
-
+box: node:6-wheezy
 build:
   steps:
     - npm-install
