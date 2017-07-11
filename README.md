@@ -152,36 +152,38 @@ Please make sure it is over 90% at all times.
 
 ## Version history
 
+* `v0.6.0` (2017-07)
+  - Minimum Node.js version lifted from `4.2.0` to `6.9.5`
 * `v0.5.3` (2016-08-08)
-    - Start testing with Windows at AppVeyor
-    - Move code coverage from `instanbul` to `nyc`
-    - Document the default value for `--media-queries` command line option
+  - Start testing with Windows at AppVeyor
+  - Move code coverage from `instanbul` to `nyc`
+  - Document the default value for `--media-queries` command line option
 * `v0.5.2` (2016-07-10)
-    - ~~Use `Object.assign()` for cloning AST object, #26~~, did not work as assumed
+  - ~~Use `Object.assign()` for cloning AST object, #26~~, did not work as assumed
 * `v0.5.1` (2015-12-04)
-    - Code coverage report at codecov #24
-    - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js
+  - Code coverage report at codecov #24
+  - ES2015 variable usage. Was going to use destructuring, but it's not released yet in Node.js
 * `v0.5.0` (2015-11-16)
-    - Limit the number of `@import` rules, #2
-    - Version outputs only `0.5.0`
-    - Require minimum of Node.js LTS version `4.2.0`
+  - Limit the number of `@import` rules, #2
+  - Version outputs only `0.5.0`
+  - Require minimum of Node.js LTS version `4.2.0`
 * `v0.4.1` (2015-03-11)
-    - One `var` too many in the previous release
+  - One `var` too many in the previous release
 * `v0.4.0` (2015-03-11)
-    - Preserve `@charset` rules, #5
+  - Preserve `@charset` rules, #5
 * `v0.3.2` (2015-02-25)
-    - Minimum number of CSS sheets was not followed
-    - Code coverage with unit tests at 100%, #1 and #8
+  - Minimum number of CSS sheets was not followed
+  - Code coverage with unit tests at 100%, #1 and #8
 * `v0.3.1` (2015-02-23)
-    - Use latest `css` version, namely `2.2.0`, which was release five days ago
+  - Use latest `css` version, namely `2.2.0`, which was release five days ago
 * `v0.3.0` (2015-02-23)
-    - Possibility to specify minimum amount of generated CSS, #7
+  - Possibility to specify minimum amount of generated CSS, #7
 * `v0.2.1` (2014-12-05)
-    - Better documentation and command line bin path configured so now usable via global install
+  - Better documentation and command line bin path configured so now usable via global install
 * `v0.2.0` (2014-11-19)
-    - Speed improvements
+  - Speed improvements
 * `v0.1.0` (2014-11-17)
-    - Initial release with splitting against selector count and media query filtering
+  - Initial release with splitting against selector count and media query filtering
 
 ## License
 
