@@ -52,8 +52,7 @@ For local installation, in which you could use `--save` or `--save-dev`:
 npm install sakugawa
 ```
 
-Please note that this tool requires the minimum [Node.js](https://nodejs.org/en/)
-version to be `6.9.5`, which is the Long Term Support (LTS) version.
+Please note that the minimum supported version of [Node.js](https://nodejs.org/en/) is `6.9.5`, which is [the Long Term Support (LTS) version](https://github.com/nodejs/LTS#lts-schedule1).
 
 ## Command line usage
 
