@@ -31,7 +31,7 @@ const Sakugawa = function Sakugawa(styles, options) {
   this.ast = css.parse(styles);
 };
 
-Sakugawa.prototype._clone = function createClone(ast) {
+Sakugawa.prototype._clone = function _clone(ast) {
 
   // Store temporarily elsewhere to speed up cloning
   const origRules = ast.stylesheet.rules;
@@ -53,7 +53,7 @@ Sakugawa.prototype._clone = function createClone(ast) {
   return clone;
 };
 
-Sakugawa.prototype._countSelectors = function countSelectors(rule, includeMedia) {
+Sakugawa.prototype._countSelectors = function _countSelectors(rule, includeMedia) {
   let total = 0;
 
   if (rule.type === 'rule' && typeof rule.selectors === 'object') {
@@ -68,7 +68,7 @@ Sakugawa.prototype._countSelectors = function countSelectors(rule, includeMedia)
   return total;
 };
 
-Sakugawa.prototype._generatePages = function generatePages(rules, ast) {
+Sakugawa.prototype._generatePages = function _generatePages(rules, ast) {
   const pages = [];
 
   let clone,
