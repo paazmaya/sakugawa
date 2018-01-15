@@ -44,14 +44,14 @@
     "node": ">=6.9.5"
   },
   "dependencies": {
-    "bossy": "~3.0",
+    "bossy": "~4.0",
     "css": "~2.2"
   },
   "devDependencies": {
-    "codecov": "~2.3",
-    "eslint": "~4.5",
-    "eslint-config-paazmaya": "~4.1",
-    "nyc": "~11.1",
+    "codecov": "~3.0",
+    "eslint": "~4.15",
+    "eslint-config-paazmaya": "~4.3",
+    "nyc": "~11.4",
     "tape": "~4.8"
   }
 }
