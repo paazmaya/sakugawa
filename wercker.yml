@@ -1,4 +1,4 @@
-box: node:6-wheezy
+box: node:8-wheezy
 build:
   steps:
     - npm-install
