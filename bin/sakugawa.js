@@ -116,7 +116,7 @@ if (args._) {
     const pages = sakugawa(styles, opts);
     pages.forEach(function eachPages(page, index) {
       // page is a CSS string
-      const pageFile = file.replace(/\.css$/, args.s + (index + 1) + '.css');
+      const pageFile = file.replace(/\.css$/u, args.s + (index + 1) + '.css');
       console.log('Writing ' + pageFile);
       fs.writeFileSync(pageFile, page, 'utf8');
     });
