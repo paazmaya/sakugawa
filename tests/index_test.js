@@ -39,24 +39,24 @@ tape('max selectors lower than total', function (test) {
   test.plan(2);
 
   const name = 'max-selectors-lower';
-	const options = {
-		maxSelectors: 16
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 16
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 2, name);
 
-	const expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
-	test.equal(result[0], expected1, name);
+  const expected1 = fs.readFileSync('tests/expected/' + name + '_1.css', 'utf8');
+  test.equal(result[0], expected1, name);
 });
 
 tape('max selectors higher than total', function (test) {
   test.plan(1);
 
   const name = 'max-selectors-higher';
-	const options = {
-		maxSelectors: 24
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 24
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 1);
 });
 
@@ -64,10 +64,10 @@ tape('max selectors same as total', function (test) {
   test.plan(1);
 
   const name = 'max-selectors-same';
-	const options = {
-		maxSelectors: 20
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 20
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 1, name);
 });
 
@@ -75,11 +75,11 @@ tape('media queries separated', function (test) {
   test.plan(1);
 
   const name = 'media-queries-separated';
-	const options = {
-		maxSelectors: 50,
-		mediaQueries: 'separate'
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 50,
+    mediaQueries: 'separate'
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 2, name);
 });
 
@@ -87,11 +87,11 @@ tape('media queries ignored', function (test) {
   test.plan(1);
 
   const name = 'media-queries-ignored';
-	const options = {
-		maxSelectors: 18,
-		mediaQueries: 'ignore'
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 18,
+    mediaQueries: 'ignore'
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 1, name);
 });
 
@@ -110,23 +110,23 @@ tape('two empty files due to minimum number of sheets being high', function (tes
   test.plan(1);
 
   const name = 'min-sheets-higher';
-	const options = {
-		maxSelectors: 12,
-		minSheets: 4
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 12,
+    minSheets: 4
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 4, name);
 });
 
 tape('minSheets irrelevant when lower than resulting number', function (test) {
   test.plan(1);
 
-  var name = 'min-sheets-lower';
-	const options = {
-		maxSelectors: 8,
-		minSheets: 2
-	};
-	var result = sakugawa(twenty, options);
+  const name = 'min-sheets-lower';
+  const options = {
+    maxSelectors: 8,
+    minSheets: 2
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 3, name);
 });
 
@@ -134,45 +134,45 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
   test.plan(1);
 
   const name = 'min-sheets-same';
-	const options = {
-		maxSelectors: 6,
-		minSheets: 4
-	};
-	const result = sakugawa(twenty, options);
+  const options = {
+    maxSelectors: 6,
+    minSheets: 4
+  };
+  const result = sakugawa(twenty, options);
   test.equal(result.length, 4, name);
 });
 
 tape('error case when no styles empty', function (test) {
   test.plan(1);
 
-	try {
-		const result = sakugawa('');
-	}
-	catch (error) {
+  try {
+    const result = sakugawa('');
+  }
+  catch (error) {
     test.equal(error.message, 'styles must not be empty');
-	}
+  }
 });
 
 tape('error case when styles are not a string', function (test) {
   test.plan(1);
 
-	try {
-		const result = sakugawa(42);
-	}
-	catch (error) {
+  try {
+    const result = sakugawa(42);
+  }
+  catch (error) {
     test.equal(error.message, 'styles must be a string');
-	}
+  }
 });
 
 tape('@charset is preserved in all resulting sheets', function (test) {
   test.plan(3);
-	const charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
+  const charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
 
   const name = 'charset-preserved';
-	const options = {
-		maxSelectors: 4
-	};
-	const result = sakugawa(charset, options);
+  const options = {
+    maxSelectors: 4
+  };
+  const result = sakugawa(charset, options);
   test.equal(result.length, 2, name);
 
   result.forEach(function (res) {

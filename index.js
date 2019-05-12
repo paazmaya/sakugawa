@@ -100,7 +100,9 @@ Sakugawa.prototype._generatePages = function _generatePages(rules, ast) {
 
 Sakugawa.prototype.createPages = function createPages() {
   let pages = [],
-    rules = this.ast.stylesheet.rules;
+    {
+      rules
+    } = this.ast.stylesheet;
 
   // Remove media queries from the first iteration when not needed there
   if (this.mediaQueries !== 'normal') {
