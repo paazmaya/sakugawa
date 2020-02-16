@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
+
 
 const fs = require('fs');
 const tape = require('tape');
@@ -26,7 +26,7 @@ var saveResults = function (results, prefix) {
 };
 */
 
-tape('dummy test', function (test) {
+tape('dummy test', (test) => {
   test.plan(2);
 
   test.equal(typeof sakugawa, 'function');
@@ -35,7 +35,7 @@ tape('dummy test', function (test) {
   test.deepEqual(sakugawa(styles), [styles]);
 });
 
-tape('max selectors lower than total', function (test) {
+tape('max selectors lower than total', (test) => {
   test.plan(2);
 
   const name = 'max-selectors-lower';
@@ -49,7 +49,7 @@ tape('max selectors lower than total', function (test) {
   test.equal(result[0], expected1, name);
 });
 
-tape('max selectors higher than total', function (test) {
+tape('max selectors higher than total', (test) => {
   test.plan(1);
 
   const name = 'max-selectors-higher';
@@ -60,7 +60,7 @@ tape('max selectors higher than total', function (test) {
   test.equal(result.length, 1);
 });
 
-tape('max selectors same as total', function (test) {
+tape('max selectors same as total', (test) => {
   test.plan(1);
 
   const name = 'max-selectors-same';
@@ -71,7 +71,7 @@ tape('max selectors same as total', function (test) {
   test.equal(result.length, 1, name);
 });
 
-tape('media queries separated', function (test) {
+tape('media queries separated', (test) => {
   test.plan(1);
 
   const name = 'media-queries-separated';
@@ -83,7 +83,7 @@ tape('media queries separated', function (test) {
   test.equal(result.length, 2, name);
 });
 
-tape('media queries ignored', function (test) {
+tape('media queries ignored', (test) => {
   test.plan(1);
 
   const name = 'media-queries-ignored';
@@ -96,7 +96,7 @@ tape('media queries ignored', function (test) {
 });
 
 /*
-tape('filename option gets used', function (test) {
+tape('filename option gets used', (test) => {
   test.plan(1);
 
 	const options = {
@@ -106,7 +106,7 @@ tape('filename option gets used', function (test) {
 });
 */
 
-tape('two empty files due to minimum number of sheets being high', function (test) {
+tape('two empty files due to minimum number of sheets being high', (test) => {
   test.plan(1);
 
   const name = 'min-sheets-higher';
@@ -118,7 +118,7 @@ tape('two empty files due to minimum number of sheets being high', function (tes
   test.equal(result.length, 4, name);
 });
 
-tape('minSheets irrelevant when lower than resulting number', function (test) {
+tape('minSheets irrelevant when lower than resulting number', (test) => {
   test.plan(1);
 
   const name = 'min-sheets-lower';
@@ -130,7 +130,7 @@ tape('minSheets irrelevant when lower than resulting number', function (test) {
   test.equal(result.length, 3, name);
 });
 
-tape('minSheets irrelevant when same as resulting number', function (test) {
+tape('minSheets irrelevant when same as resulting number', (test) => {
   test.plan(1);
 
   const name = 'min-sheets-same';
@@ -142,7 +142,7 @@ tape('minSheets irrelevant when same as resulting number', function (test) {
   test.equal(result.length, 4, name);
 });
 
-tape('error case when no styles empty', function (test) {
+tape('error case when no styles empty', (test) => {
   test.plan(1);
 
   try {
@@ -153,7 +153,7 @@ tape('error case when no styles empty', function (test) {
   }
 });
 
-tape('error case when styles are not a string', function (test) {
+tape('error case when styles are not a string', (test) => {
   test.plan(1);
 
   try {
@@ -164,7 +164,7 @@ tape('error case when styles are not a string', function (test) {
   }
 });
 
-tape('@charset is preserved in all resulting sheets', function (test) {
+tape('@charset is preserved in all resulting sheets', (test) => {
   test.plan(3);
   const charset = fs.readFileSync('tests/fixtures/charset.css', 'utf8');
 

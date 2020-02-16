@@ -6,7 +6,6 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
 
 const css = require('css');
 // const postcss = require('postcss');

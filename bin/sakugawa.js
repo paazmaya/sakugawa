@@ -8,7 +8,6 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
 
 // Usually first variables defined are the ones requiring native Node.js modules
 const fs = require('fs'),
