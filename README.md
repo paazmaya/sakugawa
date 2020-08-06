@@ -4,8 +4,7 @@
 
 ![Mr Sakugawa](logo.png)
 
-[![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/sakugawa/index?flat)](https://github.com/igrigorik/ga-beacon)
-[![Dependency Status](https://img.shields.io/david/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa)
+[![Dependency Status](https://david-dm.org/paazmaya/sakugawa/status.svg)](https://david-dm.org/paazmaya/sakugawa)
 [![devDependency Status](https://img.shields.io/david/dev/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 [![wercker status](https://app.wercker.com/status/d1673adc6fdf3e5c3e4234986517ebc3/s/master "wercker status")](https://app.wercker.com/project/byKey/d1673adc6fdf3e5c3e4234986517ebc3)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/67kt1qypoltk3dqf/branch/master?svg=true)](https://ci.appveyor.com/project/paazmaya/sakugawa/branch/master)
@@ -150,6 +149,8 @@ can be executed with `npm run coverage` after running `npm test`.
 Please make sure it is over 90% at all times.
 
 ## Version history
+
+- Run tests also against Node.js version 14. Now versions 10 (Wercker), 12 (AppVeyor), and 14 () of Node.js are covered
 
 * `v0.6.0` (2019-01-26)
   - Minimum Node.js version lifted from `4.2.0` to `8.11.1`

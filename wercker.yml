@@ -1,4 +1,4 @@
-box: node:10-wheezy
+box: node:10.13
 build:
   steps:
     - npm-install
