@@ -46,7 +46,7 @@ const cmdOptions = {
   s: {
     description: 'Output CSS file suffix',
     alias: 'suffix',
-    type: 'number',
+    type: 'string',
     default: '_'
   },
   M: {
