@@ -150,8 +150,10 @@ Please make sure it is over 90% at all times.
 
 ## Version history
 
-- Run tests also against Node.js version 14. Now versions 10 (Wercker), 12 (AppVeyor), and 14 () of Node.js are covered
-
+* `v0.7.0` (2021-02-16)
+  - Minimum Node.js version lifted from `8.11.1` to `10.13.0`
+  - Run tests also against Node.js version 14. Now versions 10 (Wercker), 12 (AppVeyor), and 14 (GitHub Actions) of Node.js are covered
+  - Suffix option did not accept strings because it was configured as `number` #40. Fixed by @gluecksmensch #41
 * `v0.6.0` (2019-01-26)
   - Minimum Node.js version lifted from `4.2.0` to `8.11.1`
   - Use [`npm-shrinkwrap.json`](https://docs.npmjs.com/files/shrinkwrap.json) for locking the working set of 3rd party dependencies
