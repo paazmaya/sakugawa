@@ -51,7 +51,7 @@ For local installation, in which you could use `--save` or `--save-dev`:
 npm install sakugawa
 ```
 
-Please note that the minimum supported version of [Node.js](https://nodejs.org/en/) is `10.13.0`, which is [the active Long Term Support (LTS) version](https://github.com/nodejs/Release#release-schedule).
+Please note that the minimum supported version of [Node.js](https://nodejs.org/en/) is `14.15.0`, which is [the active Long Term Support (LTS) version](https://github.com/nodejs/Release#release-schedule).
 
 ## Command line usage
 
