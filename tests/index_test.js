@@ -8,7 +8,6 @@
  */
 
 
-
 const fs = require('fs');
 const tape = require('tape');
 const sakugawa = require('../index');
