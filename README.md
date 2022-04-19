@@ -4,8 +4,6 @@
 
 ![Mr Sakugawa](logo.png)
 
-
-[![devDependency Status](https://img.shields.io/david/dev/paazmaya/sakugawa.svg?style=flat-square)](https://david-dm.org/paazmaya/sakugawa#info=devDependencies)
 [![wercker status](https://app.wercker.com/status/d1673adc6fdf3e5c3e4234986517ebc3/s/master "wercker status")](https://app.wercker.com/project/byKey/d1673adc6fdf3e5c3e4234986517ebc3)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/67kt1qypoltk3dqf/branch/master?svg=true)](https://ci.appveyor.com/project/paazmaya/sakugawa/branch/master)
 [![Node.js v14 CI](https://github.com/paazmaya/sakugawa/actions/workflows/linting-and-unit-testing.yml/badge.svg)](https://github.com/paazmaya/sakugawa/actions/workflows/linting-and-unit-testing.yml)
